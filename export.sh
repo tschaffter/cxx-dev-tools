@@ -38,6 +38,12 @@ function cxx_dev_tools_export_main() {
             return 1
         fi
     fi
+
+    CXX_DEV_TOOLS_ADD_PATHS_EXTRAS="${CXX_DEV_TOOLS_PATH}/cmake/format"
+    CXX_DEV_TOOLS_ADD_PATHS_EXTRAS="${CXX_DEV_TOOLS_ADD_PATHS_EXTRAS}:${CXX_DEV_TOOLS_PATH}/clang/format"
+    export PATH="${CXX_DEV_TOOLS_ADD_PATHS_EXTRAS}:${PATH}"
+
+    unset CXX_DEV_TOOLS_ADD_PATHS_EXTRAS
 }
 
 cxx_dev_tools_export_main
