@@ -1,8 +1,48 @@
 version: 2.1
-jobs:
-  build:
-    docker:
-      - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
+
+commands:
+  checkout-repository:
+    description: Checkout this repository and its submodules
     steps:
-      - checkout # check out the code in the project directory
-      - run: echo "hello world" # run the `echo` command
+      - checkout
+      - run: git submodule sync
+      - run: git submodule update --init
+  export-cxx-dev-tools:
+    description: Add cxx dev tools to PATH
+    steps:
+      - run:
+          name: Add cxx dev tools to PATH
+          command: |
+            . export.sh
+            echo 'export PATH='$PATH >> $BASH_ENV
+  run-cmake-lint:
+    description: Run cmake lint
+    steps:
+      - run: run-cmake-lint.sh "$(< .cmake-format)"
+  # run-clang-lint:
+  #   description: Run clang lint
+  #   steps:
+  #     - run: ./tools/clang/run-clang-format-check.sh
+
+
+jobs:
+  lint:
+    docker:
+      - image: tschaffter/cxx-ci
+    steps:
+      - checkout-repository
+      - run-cmake-lint
+      # - run-clang-lint
+
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - lint:
+          filters:
+            branches:
+              only:
+                - master
+                - develop
+                - /rc-.*/
