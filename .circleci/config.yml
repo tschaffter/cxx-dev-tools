@@ -37,6 +37,15 @@ jobs:
       - export-cxx-dev-tools
       - run-cmake-lint
       # - run-clang-lint
+  test:
+    docker:
+      - image: tschaffter/cxx-ci
+    steps:
+      - checkout-repository
+      - export-cxx-dev-tools
+      - run:
+          name: clang-format-check.sh returns 0 on valid header file
+          command: run-clang-format.sh clang/format/samples/valid-format.hpp
 
 
 workflows:
@@ -44,6 +53,13 @@ workflows:
   test:
     jobs:
       - lint:
+          filters:
+            branches:
+              only:
+                - master
+                - develop
+                - /rc-.*/
+      - test:
           filters:
             branches:
               only:
