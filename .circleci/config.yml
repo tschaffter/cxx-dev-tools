@@ -19,7 +19,7 @@ commands:
   run-cmake-lint:
     description: Run cmake lint
     steps:
-      - run: run-cmake-lint.sh "$(< .cmake-format)"
+      - run: run-cmake-lint.sh "$(< .cmake-format-files)"
   # run-clang-lint:
   #   description: Run clang lint
   #   steps:
