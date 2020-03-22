@@ -1,7 +1,6 @@
 #!/bin/bash
 
-CMAKE_FILES="$@ \
-    ${CXX_DEV_TOOLS_PATH}/cmake/BuildType.cmake"
+CMAKE_FILES="$@"
 
 cmake-format \
     ${CMAKE_FILES} \

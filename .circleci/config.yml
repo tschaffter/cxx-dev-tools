@@ -15,6 +15,7 @@ commands:
           command: |
             . export.sh
             echo 'export PATH='$PATH >> $BASH_ENV
+            echo 'export CXX_DEV_TOOLS_PATH='$CXX_DEV_TOOLS_PATH >> $BASH_ENV
   run-cmake-lint:
     description: Run cmake lint
     steps:
