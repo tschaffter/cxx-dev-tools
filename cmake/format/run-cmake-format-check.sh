@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CMAKE_FILES="$@"
+CMAKE_FILES=$@
 
 cmake-format \
     ${CMAKE_FILES} \

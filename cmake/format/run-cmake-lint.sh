@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CMAKE_FILES="$@"
+CMAKE_FILES=$@
 
 cmake-lint \
     ${CMAKE_FILES} \

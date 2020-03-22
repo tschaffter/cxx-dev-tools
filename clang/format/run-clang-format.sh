@@ -1,5 +1,6 @@
 #!/bin/bash
 
+CXX_FILES=$@
 
-# Searches for a .clang-format file to use
-clang-format -style=file -i include/eventemitter/*.hpp
+# clang-format.sh will be in the PATH after sourcing export.sh
+clang-format.sh -i ${CXX_FILES}
