@@ -31,6 +31,7 @@ jobs:
       - image: tschaffter/cxx-ci
     steps:
       - checkout-repository
+      - export-cxx-dev-tools
       - run-cmake-lint
       # - run-clang-lint
 
