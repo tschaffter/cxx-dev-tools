@@ -22,17 +22,17 @@ commands:
       - run:
           name: Run cmake lint
           command: run-cmake-lint.sh "$(< .cmake-format-files)"
-  test-cmake-lint:
-      description: Test cmake-format
-      steps:
-      - run:
-          name: cmake-format-check.sh returns 0 on valid cmake sample
-          command: run-cmake-format-check.sh
-            cmake/format/samples/valid-format.cmake
-      - run:
-          name: cmake-format-check.sh returns 1 on invalid cmake sample
-          command: run-cmake-format-check.sh
-            cmake/format/samples/invalid-format.hpp && exit 1 || exit 0
+  test-cmake-format:
+    description: Test cmake-format
+    steps:
+    - run:
+        name: cmake-format-check.sh returns 0 on valid cmake sample
+        command: run-cmake-format-check.sh
+          cmake/format/samples/valid-format.cmake
+    - run:
+        name: cmake-format-check.sh returns 1 on invalid cmake sample
+        command: run-cmake-format-check.sh
+          cmake/format/samples/invalid-format.hpp && exit 1 || exit 0
   test-clang-format:
     description: Test clang-format
     steps:
