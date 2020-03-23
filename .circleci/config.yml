@@ -36,7 +36,6 @@ jobs:
       - checkout-repository
       - export-cxx-dev-tools
       - run-cmake-lint
-      # - run-clang-lint
   test:
     docker:
       - image: tschaffter/cxx-ci
@@ -44,13 +43,13 @@ jobs:
       - checkout-repository
       - export-cxx-dev-tools
       - run:
-          name: clang-format-check.sh returns 0 on valid header file
+          name: clang-format-check.sh returns 0 on valid header files
           command: run-clang-format-check.sh
             clang/format/samples/valid-*.hpp
       - run:
-          name: clang-format-check.sh returns 1 on valid header file
-          command: ! run-clang-format-check.sh
-            clang/format/samples/invalid-*.hpp
+          name: clang-format-check.sh returns 1 on invalid header files
+          command: run-clang-format-check.sh
+            clang/format/samples/invalid-*.hpp && exit 1 || exit 0
 
 
 workflows:
