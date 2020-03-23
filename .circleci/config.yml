@@ -45,7 +45,11 @@ jobs:
       - export-cxx-dev-tools
       - run:
           name: clang-format-check.sh returns 0 on valid header file
-          command: run-clang-format.sh clang/format/samples/valid-format.hpp
+          command: run-clang-format-check.sh 
+            clang/format/samples/valid-format.hpp
+      - run:
+          name: clang-format-check.sh returns 1 on valid header file
+          command: ! run-clang-format-check.sh clang/format/samples/invalid-format.hpp
 
 
 workflows:
