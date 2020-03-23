@@ -22,10 +22,17 @@ commands:
       - run:
           name: Run cmake lint
           command: run-cmake-lint.sh "$(< .cmake-format-files)"
-  # run-clang-lint:
-  #   description: Run clang lint
-  #   steps:
-  #     - run: ./tools/clang/run-clang-format-check.sh
+  test-clang-format:
+    description: Test clang-format
+    steps:
+      - run:
+          name: clang-format-check.sh returns 0 on valid header files
+          command: run-clang-format-check.sh
+            clang/format/samples/valid-*.hpp
+      - run:
+          name: clang-format-check.sh returns 1 on invalid header files
+          command: run-clang-format-check.sh
+            clang/format/samples/invalid-*.hpp && exit 1 || exit 0
 
 
 jobs:
@@ -42,14 +49,7 @@ jobs:
     steps:
       - checkout-repository
       - export-cxx-dev-tools
-      - run:
-          name: clang-format-check.sh returns 0 on valid header files
-          command: run-clang-format-check.sh
-            clang/format/samples/valid-*.hpp
-      - run:
-          name: clang-format-check.sh returns 1 on invalid header files
-          command: run-clang-format-check.sh
-            clang/format/samples/invalid-*.hpp && exit 1 || exit 0
+      - test-clang-format
 
 
 workflows:
