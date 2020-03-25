@@ -23,27 +23,17 @@ commands:
           name: Run cmake lint
           command: run-cmake-lint.sh "$(< .cmake-format-files)"
   test-cmake-format:
-    description: Test cmake-format
+    description: Run cmake-format tests
     steps:
     - run:
-        name: cmake-format-check.sh returns 0 on valid cmake sample
-        command: run-cmake-format-check.sh
-          cmake/format/samples/valid-format.cmake
-    - run:
-        name: cmake-format-check.sh returns 1 on invalid cmake sample
-        command: run-cmake-format-check.sh
-          cmake/format/samples/invalid-format.hpp && exit 1 || exit 0
+        name: Run cmake-format tests
+        command: test/cmake-format/run-tests.sh
   test-clang-format:
-    description: Test clang-format
+    description: Run clang-format tests
     steps:
-      - run:
-          name: clang-format-check.sh returns 0 on valid header samples
-          command: run-clang-format-check.sh
-            clang/format/samples/valid-*.hpp
-      - run:
-          name: clang-format-check.sh returns 1 on invalid header samples
-          command: run-clang-format-check.sh
-            clang/format/samples/invalid-*.hpp && exit 1 || exit 0
+    - run:
+        name: Run clang-format tests
+        command: test/clang-format/run-tests.sh
 
 
 jobs:
