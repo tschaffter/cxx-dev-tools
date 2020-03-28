@@ -112,7 +112,7 @@ read_clang_format_config()
 {
 	while IFS= read -r line || [[ "$line" ]]; do
   		clang_format_config+=("$line")
-	done < $CXX_DEV_TOOLS_PATH/clang/config/.clang-format
+	done < $CXX_DEV_TOOLS_PATH/cxx/config/.clang-format
 }
 
 if [ "${#cxxdt_cxx_lint_files[@]}" -eq 0 ]; then
@@ -130,7 +130,6 @@ read_clang_format_config
 printf -v clang_format_config_str '%s,' "${clang_format_config[@]}"
 clang_format_config_str="{ ${clang_format_config_str%,} }"
 
-# Compare actual files to what clang-format outputs to stdout
-diff -u <(cat ${cxxdt_cxx_lint_files}) <(clang-format --style="${clang_format_config_str}" ${cxxdt_cxx_lint_files})
+clang-format --style="$clang_format_config_str" -i $cxxdt_cxx_lint_files
 
 # ] <-- needed because of Argbash
