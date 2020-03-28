@@ -53,8 +53,8 @@ repository before adding it as a submodule to your other projects.
 
 ### cxxdt-cmake-lint
 
-Check if the format of the specified CXX files is compliant with the CXX style
-configuration defined in this repo.
+Checks if the format of the specified CMake files is compliant with the CMake
+style configuration defined in this repository (`cmake/config`).
 
 ```bash
 $ cxxdt-cmake-lint test/cmake-lint/samples/invalid-format.cmake
@@ -105,42 +105,30 @@ $ echo $?
 0
 ```
 
+## cxxdt-cmake-format
 
+Formats the specified CMake files using the CMake style configuration defined
+in this repository. The CML interface is the same as `cxxdt-cmake-lint`.
 
+## cxxdt-cxx-lint
+
+Checks if the format of the specified CXX files is compliant with the CXX
+style configuration defined in this repository (`cxx/config`).
+The CML interface is the same as `cxxdt-cmake-lint`.
+
+## cxxdt-cxx-format
+
+Formats the specified CXX files using the CXX style configuration defined
+in this repository. The CML interface is the same as `cxxdt-cmake-lint`.
+
+## GitHub tools
+
+### GitHub hooks
+
+- [pre-commit hook](git/.githooks/pre-commit) - Checks
+that your `.circleci/config.yml` is valid, otherwise `git commit` fails.
 
 ## Continuous Integration
 
-Add cxx-dev-tools to your CI configuration if you want to test that the files
-committed comply with the unique formating defined here (or your own format if
-you have fork and modify this repo, see above). See `.circleci/config.yml` for
-an example on how to check that the format of your CXX and CMake files pass.
-
-## Tools
-
-### Linters and format validators
-
-TODO: List the wrappers instead
-
-- [cmake-format](https://github.com/cheshirekow/cmake_format.git):
-Linter and format validator for CMake files (CMakeLists.txt, .cmake, etc.)
-- [clang-format](https://github.com/llvm-mirror/clang/tree/master/tools/clang-format):
-Linter and format validator for CXX files (.hpp, .cpp, .h, .cpp, etc.)
-
-### CMake tools
-
-- [BuildType.cmake](cmake/BuildType.cmake): Set a default build type if none
-was specified.
-
-### GitHub tools
-
-- [pre-commit hook](git/.githooks/pre-commit): This example git pre hook checks
-that your `.circleci/config.yml` is valid, otherwise `git commit` will fail.
-
-## Configurations
-
-This repo includes the following configuration files.
-
-- [cmake/format/.cmake-format.json](cmake/format/.cmake-format.json):
-Default configuration file for `cmake-format`.
-- [cmake/format/.esp-idf-cmake-format.json](cmake/format/.esp-idf-cmake-format.json):
-Configuration file for `cmake-format` for ESP-IDF projects.
+An example of integration of `cxx-dev-tools` into a CI configuration is
+available in `.circleci/config.yml`.
