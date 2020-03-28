@@ -1,5 +1,7 @@
 # cxx-dev-tools
 
+[![CircleCI](https://circleci.com/gh/tschaffter/cxx-dev-tools.svg?style=shield)](https://circleci.com/gh/tschaffter/cxx-dev-tools)
+
 Tools to support the development and CI of CXX projects.
 
 ## Overview
