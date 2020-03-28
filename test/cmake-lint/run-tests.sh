@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ${CXX_DEV_TOOLS_PATH}/test/cmake-format
+cd ${CXX_DEV_TOOLS_PATH}/test/cmake-lint
 
 # Test 1
 cxxdt-cmake-lint samples/valid-format.cmake
