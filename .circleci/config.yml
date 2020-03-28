@@ -28,12 +28,12 @@ commands:
     - run:
         name: Run cxxdt-cmake-lint tests
         command: test/cmake-lint/run-tests.sh
-  # test-clang-format:
-  #   description: Run clang-format tests
-  #   steps:
-  #   - run:
-  #       name: Run clang-format tests
-  #       command: test/clang-format/run-tests.sh
+  test-cxx-lint:
+    description: Run cxxdt-cxx-lint tests
+    steps:
+    - run:
+        name: Run cxxdt-cxx-lint tests
+        command: test/cxx-lint/run-tests.sh
 
 
 jobs:
@@ -51,7 +51,7 @@ jobs:
       - checkout-repository
       - export-cxx-dev-tools
       - test-cmake-lint
-      # - test-clang-format
+      - test-cxx-lint
 
 
 workflows:
