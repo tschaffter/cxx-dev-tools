@@ -21,19 +21,19 @@ commands:
     steps:
       - run:
           name: Run cmake lint
-          command: run-cmake-lint.sh "$(< .cmake-format-files)"
-  test-cmake-format:
-    description: Run cmake-format tests
+          command: cxxdt-cmake-lint
+  test-cmake-lint:
+    description: Run cxxdt-cmake-lint tests
     steps:
     - run:
-        name: Run cmake-format tests
-        command: test/cmake-format/run-tests.sh
-  test-clang-format:
-    description: Run clang-format tests
-    steps:
-    - run:
-        name: Run clang-format tests
-        command: test/clang-format/run-tests.sh
+        name: Run cxxdt-cmake-lint tests
+        command: test/cmake-lint/run-tests.sh
+  # test-clang-format:
+  #   description: Run clang-format tests
+  #   steps:
+  #   - run:
+  #       name: Run clang-format tests
+  #       command: test/clang-format/run-tests.sh
 
 
 jobs:
@@ -50,8 +50,8 @@ jobs:
     steps:
       - checkout-repository
       - export-cxx-dev-tools
-      - test-cmake-format
-      - test-clang-format
+      - test-cmake-lint
+      # - test-clang-format
 
 
 workflows:

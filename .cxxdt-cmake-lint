@@ -1,2 +1,1 @@
-test/cmake-format/samples/valid-format.cmake
-test/cmake-format/samples/valid-*.cmake
+cmake/BuildType.cmake
