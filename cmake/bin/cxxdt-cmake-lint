@@ -116,6 +116,9 @@ if [ "${#cxxdt_cmake_lint_files[@]}" -eq 0 ]; then
 	read_cmake_files_from_file
 fi
 
+# Join CMake files
+printf -v cxxdt_cmake_lint_files '%s ' "${cxxdt_cmake_lint_files[@]}"
+
 cmake-lint \
     $cxxdt_cmake_lint_files \
     --config-files \
