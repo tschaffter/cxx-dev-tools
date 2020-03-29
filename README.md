@@ -133,4 +133,4 @@ available in `.circleci/config.yml`.
 
 ## Contributing change
 
-Please read the CONTRIBUTING.md for details on how to contribute to this project.
+Please read the [`CONTRIBUTING.md`](CONTRIBUTING.md) for details on how to contribute to this project.
