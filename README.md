@@ -142,7 +142,7 @@ before acceptiing a commit.
 An example of integration of `cxx-dev-tools` into a CI configuration is
 available in `.circleci/config.yml`.
 
-## Related Open Source Projects
+## Related open source projects
 
 Projects | Description
 ----------|--------------|
