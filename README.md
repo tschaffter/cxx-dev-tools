@@ -31,6 +31,17 @@ one repository. This reposiutory can then be added as a Git submodule to
 multiple repositories that will then benefit from the same tools and
 configurations.
 
+## Requirements
+
+The following programs must be installed before using the tools provided by the
+repository.
+
+- [cmake-format](https://github.com/cheshirekow/cmake_format)
+- [cmake-lint](https://github.com/cheshirekow/cmake_format)
+- [clang-format](https://github.com/llvm-mirror/clang/tree/master/tools/clang-format)
+
+An example of how to install these programs is given in this [Dockerfile](https://github.com/tschaffter/cxx-ci.git)
+
 ## Usage
 
 If you want to use the tool versions and configurations defined in this
@@ -123,13 +134,22 @@ in this repository. The CML interface is the same as `cxxdt-cmake-lint`.
 
 ## GitHub tools
 
-- [pre-commit hook](git/.githooks/pre-commit) - Checks
-that your `.circleci/config.yml` is valid, otherwise `git commit` fails.
+- .githook/pre-commit - Validates `.circleci/config.yml`
+before acceptiing a commit.
 
 ## Continuous Integration
 
 An example of integration of `cxx-dev-tools` into a CI configuration is
 available in `.circleci/config.yml`.
+
+## Related Open Source Projects
+
+Projects | Description
+----------|--------------|
+[tschaffter/cxx-ci](https://github.com/tschaffter/cxx-ci.git) | CXX build and test environment
+[tschaffter/cxx-ci](https://github.com/tschaffter/esp-idf-ci.git) | ESP-IDF build and test environment
+
+[tschaffter/cxx-ci - 
 
 ## Contributing change
 
