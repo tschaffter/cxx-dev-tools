@@ -40,7 +40,7 @@ repository.
 - [cmake-lint](https://github.com/cheshirekow/cmake_format)
 - [clang-format](https://github.com/llvm-mirror/clang/tree/master/tools/clang-format)
 
-An example of how to install these programs is given in this [Dockerfile](https://github.com/tschaffter/cxx-ci.git)
+An example of how to install these programs is given in this [Dockerfile](https://github.com/tschaffter/cxx-ci.git).
 
 ## Usage
 
