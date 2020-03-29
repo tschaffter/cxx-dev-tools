@@ -58,7 +58,7 @@ cd dev-cxx-tools && . export.sh
 ```
 
 If you want to customize the tool versions and configuration, then fork this
-repository before adding it as a submodule to your other projects.
+repository before adding it as a submodule to your projects.
 
 ## Tools
 
