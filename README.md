@@ -123,8 +123,6 @@ in this repository. The CML interface is the same as `cxxdt-cmake-lint`.
 
 ## GitHub tools
 
-### GitHub hooks
-
 - [pre-commit hook](git/.githooks/pre-commit) - Checks
 that your `.circleci/config.yml` is valid, otherwise `git commit` fails.
 
@@ -132,3 +130,7 @@ that your `.circleci/config.yml` is valid, otherwise `git commit` fails.
 
 An example of integration of `cxx-dev-tools` into a CI configuration is
 available in `.circleci/config.yml`.
+
+## Contributing change
+
+Please read the CONTRIBUTING.md for details on how to contribute to this project.
