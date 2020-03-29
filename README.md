@@ -12,7 +12,7 @@ This repo provides a growing list of tools.
 - CXX linter
 - Git hooks
 
-This tools aim to support best coding practices like linting files, comfiguring
+This tools aim to support best coding practices like linting files, configuring
 a Git pre-commit hook, etc.
 
 The main motivation for developing these tools is to address an issue that
@@ -22,12 +22,12 @@ the example of a CMake linter:
 1. each repository may host a copy of the configuration that the linter must use
 2. each repository may define a different version of the linter
 
-Both elements contribute to introduce discrepencies in the code formatting and
+Both elements contribute to introduce discrepancies in the code formatting and
 make the maintenance of the code base across multiple repositories more
 difficult.
 
 The solution proposed is to define both tools and configurations in
-one repository. This reposiutory can then be added as a Git submodule to
+one repository. This repository can then be added as a Git submodule to
 multiple repositories that will then benefit from the same tools and
 configurations.
 
