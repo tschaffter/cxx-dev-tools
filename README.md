@@ -149,8 +149,6 @@ Projects | Description
 [tschaffter/cxx-ci](https://github.com/tschaffter/cxx-ci.git) | CXX build and test environment
 [tschaffter/cxx-ci](https://github.com/tschaffter/esp-idf-ci.git) | ESP-IDF build and test environment
 
-[tschaffter/cxx-ci - 
-
 ## Contributing change
 
 Please read the [`CONTRIBUTING.md`](CONTRIBUTING.md) for details on how to contribute to this project.
