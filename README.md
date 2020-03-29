@@ -147,7 +147,7 @@ available in `.circleci/config.yml`.
 Projects | Description
 ----------|--------------|
 [tschaffter/cxx-ci](https://github.com/tschaffter/cxx-ci.git) | CXX build and test environment
-[tschaffter/cxx-ci](https://github.com/tschaffter/esp-idf-ci.git) | ESP-IDF build and test environment
+[tschaffter/esp-idf-ci](https://github.com/tschaffter/esp-idf-ci.git) | ESP-IDF build and test environment
 
 ## Contributing change
 
