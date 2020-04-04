@@ -124,6 +124,9 @@ if [ "${#cxxdt_cxx_lint_files[@]}" -eq 0 ]; then
 	read_cxx_files_from_file
 fi
 
+# Join cxx files
+printf -v cxxdt_cxx_lint_files '%s ' "${cxxdt_cxx_lint_files[@]}"
+
 read_clang_format_config
 
 # Convert the config array to JSON string
