@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/tschaffter/cxx-dev-tools.svg?style=shield)](https://circleci.com/gh/tschaffter/cxx-dev-tools)
 
-Tools for supporting the development of CXX projects
+Linter, CMake, GH Hooks and other tools for standardizing CXX projects.
 
 ## Overview
 
